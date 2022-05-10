@@ -1,17 +1,35 @@
 "use strict";
 
-$(document).ready (event => {
+$(document).ready(event => {
 
-    console.log("ok");
+    var searchbar = $("#searchbar");
+    var input = searchbar.val();
+    var citiesList = [];
 
-    const villes = [];
-    var form = $('form');
-    var formDatas = new FormData();
-    var input = $('input');
-    var resultat = $('ul');
-    var lien = $('#a');
-    var article = $('article');
 
-    formDatas.append('input', input.value);
+    $.get("suggestion.php", function (data) {
+
+        let result = JSON.parse(data)
+
+        for (let i = 0; i < result.length; i++) {
+            citiesList.push(result[i].ville_nom);
+        }
+
+        $(function () {
+
+            searchbar.autocomplete({
+                source: citiesList,
+                delay: 500
+            });
+
+        });
+
+
+    });
+    searchbar.menu({
+        classes: {
+          "ui-menu": "highlight"
+        }
+      });
 
 })
