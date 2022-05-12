@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", event => {
             `
             ).join('');
             matchList.innerHTML = html;
-            var suggestion = document.querySelector(".card")
             
         }
     }

@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/2e455cc5f8.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <title><?php $title ?></title>
 </head>
@@ -39,8 +40,8 @@
                     <?php if ($title !== "Accueil") : ?>
 
                         <form class="d-flex" data-dashlane-rid="5f957bb9f267380b" data-form-type="">
-                            <input class="form-control me-sm-2" type="text" placeholder="Search" data-dashlane-rid="205292a49ab3c33a" data-form-type="">
-                            <button class="btn btn-secondary my-2 my-sm-0" type="submit" data-dashlane-rid="e4f91b12f2682c02" data-dashlane-label="true" data-form-type="">Search</button>
+                            <input class="form-control me-sm-2" type="text" placeholder="Recherche">
+                            <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
 
                     <?php endif; ?>
