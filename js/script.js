@@ -30,8 +30,7 @@ document.addEventListener("DOMContentLoaded", event => {
         if (matches.length > 0) {
             const html = matches.map(match => `
                 <li class="card card-body mb-1" id="${match.name}">
-                    <h4>${match.name} <span class="text-primary">${match.capital}</span></h4>
-                    <small>Lat: ${match.lat} / Long: ${match.long}</small>
+                    <a class="text-decoration-none" href="recherche.php?search=${match.name}">${match.name} ${match.capital}</a>
                 </li>
             `
             ).join('');
