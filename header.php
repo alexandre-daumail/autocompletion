@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -7,13 +5,23 @@
 <html lang="en">
 
 <head>
+
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Fontawesome kit -->
     <script src="https://kit.fontawesome.com/2e455cc5f8.js" crossorigin="anonymous"></script>
+
+    <!-- JS script link -->
     <script type="text/javascript" src="js/script.js"></script>
+
     <title><?php $title ?></title>
+
 </head>
 
 <body>

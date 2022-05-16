@@ -4,16 +4,17 @@ document.addEventListener("DOMContentLoaded", event => {
 
     const search = document.querySelector("#search");
     const matchList = document.querySelector("#matchList");
+    const matchList2 = document.querySelector("#matchList2");
 
     //search suggestion.php and filter it
     const searchCities = async searchText => {
-        const res = await fetch("./data/states.json");
-        const states = await res.json();
+        const response = await fetch("./data/suggestion.php");
+        const cities = await response.json();
 
         // Get matches to current text input
-        let matches = states.filter(state => {
+        let matches = cities.filter(city => {
             const regex = new RegExp(`^${searchText}`, 'gi');
-            return state.name.match(regex)  || state.abbr.match(regex);
+            return city.nom_reel.match(regex)  
         });
 
         if (searchText.length === 0) {
@@ -28,9 +29,11 @@ document.addEventListener("DOMContentLoaded", event => {
     // Show results in HTML
     const outputHtml = matches => {
         if (matches.length > 0) {
-            const html = matches.map(match => `
-                <li class="card card-body mb-1" id="${match.name}">
-                    <a class="text-decoration-none" href="recherche.php?search=${match.name}">${match.name} ${match.capital}</a>
+
+            // Slice reduces the number of matches result
+            const html = matches.slice(0, 5).map(match => `
+                <li class="card card-body text-white bg-primary mb-1">
+                    <a class="text-decoration-none link-light" href="element.php?search=${match.id}">${match.nom_reel} (${match.code_postal})</a>
                 </li>
             `
             ).join('');
@@ -39,6 +42,23 @@ document.addEventListener("DOMContentLoaded", event => {
         }
     }
 
-    search.addEventListener("input", () => searchCities(search.value))
+     // Show results in HTML
+     const outputHtml2 = matches => {
+        if (matches.length > 0) {
+
+            // Slice reduces the number of matches result
+            const html = matches.slice(0, 5).map(match => `
+                <li class="card card-body text-white bg-secondary mb-1">
+                    <a class="text-decoration-none link-light" href="recherche.php?search=${match.nom_reel}">${match.nom_reel} (${match.code_postal})</a>
+                </li>
+            `
+            ).join('');
+            matchList.innerHTML = html;
+            
+        }
+    }
+
+
+    search.addEventListener("keyup", () => searchCities(search.value))
 
 });

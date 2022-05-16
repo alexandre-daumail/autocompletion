@@ -17,6 +17,7 @@ include 'header.php'
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <ul id="matchList"></ul>
+            <ul id="matchList2"></ul>
         </div>
 
     </div>
