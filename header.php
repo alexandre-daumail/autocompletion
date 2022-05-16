@@ -20,7 +20,7 @@
     <!-- JS script link -->
     <script type="text/javascript" src="js/script.js"></script>
 
-    <title><?php $title ?></title>
+    <title><?= $title ?></title>
 
 </head>
 

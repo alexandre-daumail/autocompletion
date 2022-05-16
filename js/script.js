@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", event => {
             // Slice reduces the number of matches result
             const html = matches.slice(0, 5).map(match => `
                 <li class="card card-body text-white bg-primary mb-1">
-                    <a class="text-decoration-none link-light" href="element.php?search=${match.id}">${match.nom_reel} (${match.code_postal})</a>
+                    <a class="text-decoration-none link-light" href="element.php?search=${match.nom_simple}">${match.nom_reel} (${match.code_postal})</a>
                 </li>
             `
             ).join('');
