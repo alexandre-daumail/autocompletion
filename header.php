@@ -47,8 +47,8 @@
 
                     <?php if ($title !== "Accueil") : ?>
 
-                        <form class="d-flex" data-dashlane-rid="5f957bb9f267380b" data-form-type="">
-                            <input class="form-control me-sm-2" type="text" placeholder="Recherche">
+                        <form class="d-flex" method="get" action="recherche.php">
+                            <input class="form-control me-sm-2" type="text" name="search" placeholder="Recherche">
                             <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
 
