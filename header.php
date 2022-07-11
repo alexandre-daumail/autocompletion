@@ -45,19 +45,21 @@
                         </li>
                     </ul>
 
-                    <?php if ($title !== "Accueil") : ?>
-
-                        <form class="d-flex" method="get" action="recherche.php">
-                            <input class="form-control me-sm-2" type="text" id="search" name="search" placeholder="Recherche">
-                            <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </form>
-
-                    <?php endif; ?>
-
+                    
                 </div>
             </div>
         </nav>
     </header>
+    
+    <?php if ($title !== "Accueil") : ?>
+<div>
 
-    <ul id="matchList"></ul>
-    <ul id="matchList2"></ul>
+<form class="d-flex" method="get" action="recherche.php">
+<input class="form-control me-sm-2" type="text" id="search" name="search" placeholder="Recherche">
+<button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+
+<ul id="matchList"></ul>
+<ul id="matchList2"></ul>
+</div>
+    <?php endif; ?>
