@@ -17,12 +17,19 @@ document.addEventListener("DOMContentLoaded", event => {
             return city.nom_reel.match(regex)  
         });
 
+        let matches2 = cities.filter(city => {
+            const regex = new RegExp(`${searchText}`, 'gi');
+            return city.nom_reel.match(regex)  
+        });
+
         if (searchText.length === 0) {
             matches = [];
             matchList.innerHTML = '';
         }
 
         outputHtml(matches);
+
+        outputHtml2(matches2);
 
     };
 
@@ -49,11 +56,11 @@ document.addEventListener("DOMContentLoaded", event => {
             // Slice reduces the number of matches result
             const html = matches.slice(0, 5).map(match => `
                 <li class="card card-body text-white bg-secondary mb-1">
-                    <a class="text-decoration-none link-light" href="recherche.php?search=${match.nom_reel}">${match.nom_reel} (${match.code_postal})</a>
+                    <a class="text-decoration-none link-light" href="recherche.php?search=${match.nom_simple}">${match.nom_reel} (${match.code_postal})</a>
                 </li>
             `
             ).join('');
-            matchList.innerHTML = html;
+            matchList2.innerHTML = html;
             
         }
     }
